@@ -20,8 +20,7 @@ func ListWinners(res http.ResponseWriter, req *http.Request) {
 			return
 		}
 		res.Write(winner)
-	}
-	else {
+	} else {
 		filteredWinners, err := data.ListAllByYear(year)
 		if err != nil{
 			res.WriteHeader(http.StatusBadRequest, 400)
